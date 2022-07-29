@@ -1,5 +1,5 @@
 <?php
-include 'configure.php';
+include 'Configure/database.php';
 include 'controllers/todoController.php';
 
 //todo from database
