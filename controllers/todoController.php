@@ -39,7 +39,7 @@ class Todo
                 $added = mysqli_query($this->conn,  $sql);
                 //check if inserted
                 if ($added) {
-                    echo "Todo added";
+                    return "Todo added";
                 } else {
                     throw new Exception("Todo not added");
                 }
@@ -47,7 +47,7 @@ class Todo
                 throw new Exception("Please enter todo to add");
             }
         } catch (Exception $error) {
-            echo "Error: " . $error->getMessage();
+            return "Error: " . $error->getMessage();
         }
     }
 
@@ -61,7 +61,7 @@ class Todo
                 $deleted = mysqli_query($this->conn, $sql);
                 //check if deleted
                 if ($deleted) {
-                    echo "todo deleted";
+                    return "todo deleted";
                 } else {
                     throw new Exception("Todo can't be deleted");
                 }
@@ -69,7 +69,7 @@ class Todo
                 throw new Exception("id not mentioned");
             }
         } catch (Exception $error) {
-            echo 'Error: ' . $error->getMessage();
+            return 'Error: ' . $error->getMessage();
         }
     }
 
@@ -82,7 +82,7 @@ class Todo
                 $sql = "UPDATE `todos` SET `todo`='$data' WHERE `id`='$id'";
                 $updated = mysqli_query($this->conn, $sql);
                 if ($updated) {
-                    echo "updated";
+                    return "updated";
                 } else {
                     throw new Exception("Todo not updated");
                 }
@@ -90,7 +90,7 @@ class Todo
                 throw new Exception("Please enter new text to update");
             }
         } catch (Exception $error) {
-            echo "Not updated " . $error->getMessage();
+            return "Not updated " . $error->getMessage();
         }
     }
 }

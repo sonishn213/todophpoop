@@ -1,4 +1,5 @@
 <?php
+
 //urls for navigation bar
 $urls = [
     [
@@ -12,6 +13,20 @@ $urls = [
     //add new entry to insert new navabar link
 ];
 
+if (isset($_SESSION['useremail'])) {
+
+    $urls = [
+        [
+            "text" => "Home",
+            "link" => "/todophp",
+        ],
+        [
+            "text" => "Logout",
+            "link" => "/todophp/auth/logout.php",
+        ]
+        //add new entry to insert new navabar link
+    ];
+}
 //current url
 $CURRENT_PATH = $_SERVER['REQUEST_URI'];
 
@@ -56,4 +71,3 @@ $CURRENT_PATH = $_SERVER['REQUEST_URI'];
             </div>
         </div>
     </nav>
-    <div class="container-fluid">
